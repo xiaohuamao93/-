@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "趣惠购",
+  "backgroundColor": "#F0F0F0",
+  "usingComponents": {
+      "bc-module": "miniapp-bc-user/es/bc-module/bc-module"
+  }
+}

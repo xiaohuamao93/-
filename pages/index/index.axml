@@ -1,0 +1,50 @@
+<view disable-scroll="{{isShowReceiveDialog || isShowGuide}}">
+  <view class="search-plugin-wrap md-plugin-search-click">
+    <bc-module
+      a:if="{{ showComponent}}"
+      code="suite://bc.suite.etaoMarketing/bc.template.rebate.search"
+      name="block-etao-searchbox"
+      onError="bcError"
+    />
+  </view>
+  <view class="banner-wrap md-plugin-banner-click"  a:if="{{ showComponent}}">
+    <bc-module
+      code="suite://bc.suite.union618/bc.template.banner"
+      name="block-banner"
+      onError="bcError"
+    />
+  </view>
+  <view class="plugin-nav-wrap md-plugin-nav-click" a:if="{{ showComponent }}" >
+    <bc-module
+      code="suite://bc.suite.union618/bc.template.nav"
+      name="block-nav"
+      onError="bcError"
+    />
+  </view>
+
+  <view class="top-top" catchTap="toTop" hidden="{{!isShowToTop}}">
+    <image mode="scaleToFill" src="/asserts/images/top-icon.png"></image>
+  </view>
+
+ <view class="md-plugin-float-click" a:if="{{ showComponent && !isShowRedPacketDialog}}">
+    <bc-module
+      code="suite://bc.suite.union618/bc.template.icon"
+      name="block-icon"
+      onError="bcError"
+    />
+  </view>
+  <view class="dialog-wrap md-plugin-red-dialog" a:if="{{showComponent && isShowRedPacketDialog}}" onTap="closeRedPacket">
+     <bc-module
+      code="suite://bc.suite.union618/bc.template.dialog"
+      name="block-dialog"
+      onError="bcError"
+    />
+  </view>      
+   <bc-module
+      a:if="{{showComponent}}"
+      code="suite://bc.suite.materiel/bc.template.materiel"
+      name="block-materiel"
+      ext="{{ pluginOptions: pluginOptions, loadMoreTime }}"
+      onError="bcError"
+    />
+</view>

@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "useDynamicPlugins": true,
+  "window": {
+    "defaultTitle": "趣惠购",
+    "titleBarColor": "#fff",
+    "pullRefresh": false
+  }
+}
